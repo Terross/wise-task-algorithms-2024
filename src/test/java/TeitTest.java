@@ -1,20 +1,19 @@
 import com.mathsystem.api.graph.GraphFactory;
 import org.junit.Test;
+import ru.leti.CheckTeit;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
-public class TeytoTest {
-
+public class TeitTest {
     @Test
     public void activateSimpleTest() throws FileNotFoundException {
-        var teytoTest = new Teyto();
+        var teytoTest = new CheckTeit();
 
-        File trueDirectory = new File("src/test/resources/teyto/trues");
-        File falseDirectory = new File("src/test/resources/teyto/falses");
+        File trueDirectory = new File("src/test/resources/tait/trues");
+        File falseDirectory = new File("src/test/resources/tait/falses");
 
         File[] trueFiles = trueDirectory.listFiles();
         File[] falseFiles = falseDirectory.listFiles();
