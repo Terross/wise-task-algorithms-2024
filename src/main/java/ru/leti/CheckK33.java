@@ -1,6 +1,9 @@
+package ru.leti;
+
 import com.mathsystem.api.graph.model.Edge;
 import com.mathsystem.api.graph.model.Graph;
 import com.mathsystem.api.graph.model.Vertex;
+import com.mathsystem.domain.graph.repository.Color;
 import com.mathsystem.domain.plugin.plugintype.GraphProperty;
 
 import java.util.*;
@@ -11,7 +14,7 @@ public class CheckK33 implements GraphProperty {
     @Override
     public boolean execute(Graph graph) {
         // Лямбда проверки выделено ли ребро
-        Predicate<Edge> cf = (Edge e) -> e.getLabel().equals("+");
+        Predicate<Edge> cf = (Edge e) -> e.getColor().equals(Color.red);
 
         // Стянутые ребра
         var removedEdges = graph.getEdges().stream().filter(cf)
@@ -21,6 +24,7 @@ public class CheckK33 implements GraphProperty {
                 .collect(Collectors.toCollection(LinkedList::new));
 
         // Группы стянутых вершин
+        var checked = new HashSet<UUID>();
         var groups = new HashSet<HashSet<UUID>>();
         for (var e : removedEdges) {
             HashSet<UUID> group = null;
@@ -30,49 +34,53 @@ public class CheckK33 implements GraphProperty {
                     break;
                 }
             }
-            if (group == null) group = new HashSet<>();
+            if (group == null) {
+                group = new HashSet<>();
+                groups.add(group);
+            }
             group.add(e.getFromV());
+            checked.add(e.getFromV());
+
             group.add(e.getToV());
-            groups.add(group);
+            checked.add(e.getToV());
         }
+        graph.getVertices().values().stream()
+                .filter(v -> !checked.contains(v.getId()))
+                .forEach(v -> groups.add(new HashSet<>(Collections.singleton(v.getId()))));
 
         // Новые идентификаторы слитых вершин
-        var updatedVertices = new HashMap<UUID, Vertex>();
+        var newVertices = new HashMap<UUID, Vertex>();
         for (var g : groups) {
-            var uid = Vertex.builder().id(UUID.randomUUID()).build();
+            var v = Vertex.builder().id(UUID.randomUUID()).build();
             for (var el : g) {
-                updatedVertices.put(el, uid);
+                newVertices.put(el, v);
             }
         }
 
         // Ребра стянутого графа
-        var newEdges = new LinkedList<Edge>();
-        for (var e : restedEdges) {
-            var edge = new Edge(
-                    updatedVertices.get(e.getFromV()).getId(),
-                    updatedVertices.get(e.getToV()).getId(),
-                    e.getColor(),
-                    e.getWeight(),
-                    e.getLabel()
-            );
-            newEdges.add(edge);
+        var newEdges = restedEdges;
+        for (var e : newEdges) {
+            if (newVertices.containsKey(e.getFromV()))
+                e.setFromV(newVertices.get(e.getFromV()).getId());
+            if (newVertices.containsKey(e.getToV()))
+                e.setToV(newVertices.get(e.getToV()).getId());
         }
 
         // Проверка на изоморфность K33
-        if ((new HashSet<>(updatedVertices.values())).size() != 6) return false;
+        if (groups.size() != 6) return false;
         if (newEdges.size() != 9) return false;
 
-        HashSet<UUID> left = new HashSet<>();
+        HashSet<UUID> left = new HashSet<>(Collections.singleton(newEdges.getFirst().getFromV()));
         HashSet<UUID> right = new HashSet<>();
-        for (var e : newEdges) {
-            if (left.contains(e.getFromV())) {
-                right.add(e.getToV());
-            } else if (right.contains(e.getFromV())) {
-                left.add(e.getToV());
-            } else {
-                left.add(e.getFromV());
-                right.add(e.getToV());
-            }
+        for (var e: newEdges) {
+            if (left.contains(e.getFromV())) right.add(e.getToV());
+            else if (left.contains(e.getToV())) right.add(e.getFromV());
+        }
+        for (var e: newEdges) {
+            if (left.contains(e.getFromV())) right.add(e.getToV());
+            else if (left.contains(e.getToV())) right.add(e.getFromV());
+            else if (right.contains(e.getFromV())) left.add(e.getToV());
+            else if (right.contains(e.getToV())) left.add(e.getFromV());
         }
 
         return left.size() == right.size() && left.size() == 3;
