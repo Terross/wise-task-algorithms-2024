@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IsPlanarWithoutSomeEdge:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IsPlanarWithoutSomeEdge_jar</output-path>
+    <root id="archive" name="IsPlanarWithoutSomeEdge.jar">
+      <element id="module-output" name="IsPlanarWithoutSomeEdge" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../math-system-1_0-SNAPSHOT.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
