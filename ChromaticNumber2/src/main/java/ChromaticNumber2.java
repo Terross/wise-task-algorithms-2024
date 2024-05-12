@@ -9,9 +9,7 @@ import java.util.*;
 public class ChromaticNumber2 implements GraphProperty {
     public Map<UUID, List<UUID>> getAdjacencyList(Graph graph) {
         Map<UUID, List<UUID>> adjacencyList = new HashMap<>();
-        graph.getVertices().keySet().forEach(key -> {
-            adjacencyList.put(key, new ArrayList<>());
-        });
+        graph.getVertices().keySet().forEach(key -> adjacencyList.put(key, new ArrayList<>()));
 
         for (Edge edge : graph.getEdges()) {
             UUID key = edge.getFromV();
@@ -35,32 +33,33 @@ public class ChromaticNumber2 implements GraphProperty {
         Color firstColor = Color.pink;
         Color secondColor = Color.brown;
 
+        // Словарь раскраски вершин (эта раскраска не коррелирует с исходной раскраской вершин)
+        Map<UUID, Color> colorMap = new HashMap<>();
+
         // Покрасим все вершины в один цвет перед началом работы алгоритма
-        graph.getVertices().values().forEach(value -> {
-            value.setColor(defaultColor);
-        });
+        graph.getVertices().keySet().forEach(key -> colorMap.put(key, defaultColor));
 
         Map<UUID, List<UUID>> adjacencyList = getAdjacencyList(graph);
 
-        for (var entry : graph.getVertices().entrySet()) {
-            if (!entry.getValue().getColor().equals(defaultColor))
+        for (var entry : colorMap.entrySet()) {
+            if (!entry.getValue().equals(defaultColor))
                 continue;
 
             Queue<UUID> queue = new LinkedList<>();
-            graph.getVertices().get(entry.getKey()).setColor(firstColor);
+            colorMap.put(entry.getKey(), firstColor);
             queue.add(entry.getKey());
 
             while (!queue.isEmpty()) {
                 UUID current = queue.poll();
                 List<UUID> adjacentVertices = adjacencyList.get(current);
-                Color currentVertexColor = graph.getVertices().get(current).getColor();
-                Color colorToPaint = graph.getVertices().get(current).getColor() == firstColor ? secondColor : firstColor;
+                Color currentVertexColor = colorMap.get(current);
+                Color colorToPaint = currentVertexColor == firstColor ? secondColor : firstColor;
 
                 for (UUID vertex : adjacentVertices) {
-                    if (graph.getVertices().get(vertex).getColor() == defaultColor) {
-                        graph.getVertices().get(vertex).setColor(colorToPaint);
+                    if (colorMap.get(vertex).equals(defaultColor)) {
+                        colorMap.put(vertex, colorToPaint);
                         queue.add(vertex);
-                    } else if (graph.getVertices().get(vertex).getColor() == currentVertexColor)
+                    } else if (colorMap.get(vertex).equals(currentVertexColor))
                         return false;
                 }
             }
