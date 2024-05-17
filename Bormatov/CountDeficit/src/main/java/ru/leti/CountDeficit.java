@@ -9,6 +9,9 @@ import java.util.*;
 public class CountDeficit implements GraphCharacteristic {
     @Override
     public Integer execute(Graph graph) {
+        if (!isBipartite(graph)) {
+            return -1; // Или выбросить исключение
+        }
         Map<UUID, Vertex> vertices = graph.getVertices();
         List<Edge> edges = graph.getEdges();
 
@@ -17,6 +20,45 @@ public class CountDeficit implements GraphCharacteristic {
         int deficit = numOfVertices - maxMatchingSize;
 
         return deficit;
+    }
+
+    private static boolean isBipartite(Graph graph) {
+        Map<UUID, Vertex> vertices = graph.getVertices();
+        Set<UUID> visited = new HashSet<>();
+        Map<UUID, Integer> colors = new HashMap<>();
+
+        // Обход графа в ширину
+        for (UUID vertexId : vertices.keySet()) {
+            if (!visited.contains(vertexId)) {
+                Queue<UUID> queue = new LinkedList<>();
+                queue.add(vertexId);
+                colors.put(vertexId, 0); // Присваиваем начальный цвет
+
+                while (!queue.isEmpty()) {
+                    UUID currentVertex = queue.poll();
+                    visited.add(currentVertex);
+
+                    int currentColor = colors.get(currentVertex);
+                    int neighborColor = 1 - currentColor; // Соседние вершины должны иметь противоположный цвет
+
+                    // Получаем все рёбра графа
+                    List<Edge> edges = graph.getEdges();
+
+                    for (Edge edge : edges) {
+                        if (edge.getFromV().equals(currentVertex)) { // Проверка начальной вершины ребра
+                            UUID neighborId = edge.getToV();
+                            if (!colors.containsKey(neighborId)) {
+                                colors.put(neighborId, neighborColor);
+                                queue.add(neighborId);
+                            } else if (colors.get(neighborId) != neighborColor) {
+                                return false; // Если сосед имеет неверный цвет, то граф не двудольный
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return true; // Все вершины раскрашены верно
     }
 
     private static int findMaxMatchingSize(Map<UUID, Vertex> vertices, List<Edge> edges) {
