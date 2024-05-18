@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SumDegVerGeqNumVer_1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SumDegVerGeqNumVer_1_jar</output-path>
+    <root id="archive" name="SumDegVerGeqNumVer_1.jar">
+      <element id="module-output" name="SumDegVerGeqNumVer1" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/math-system-1_0-SNAPSHOT.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
