@@ -57,6 +57,6 @@ public class MinNodeDegreeTest {
     @Test
     public void testEmpty() throws FileNotFoundException {
         var graph = GraphFactory.loadGraphFromFile(new File("src/test/resources/empty.txt"));
-        assertThat(min_node_degree.execute(graph)).isEqualTo(0);
+        assertThat(min_node_degree.execute(graph)).isEqualTo(-1);
     }
 }

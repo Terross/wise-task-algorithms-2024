@@ -3,27 +3,32 @@ import com.mathsystem.api.graph.model.Edge;
 import com.mathsystem.api.graph.model.Vertex;
 import com.mathsystem.domain.plugin.plugintype.GraphCharacteristic;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.UUID;
+import java.util.*;
 
 public class MinNodeDegree implements GraphCharacteristic {
     @Override
     public Integer execute(Graph graph) {
         // check if graph has no vertices
         if (graph.getVertexCount() == 0)
-            return 0;
-        // initialize hashmap
-        var vertex_to_degree = new HashMap<UUID, Integer>(); // degree of each vertex
-        for (Vertex vertex : graph.getVertices().values())
-            vertex_to_degree.put(vertex.getId(), 0);
+            return -1;
+        var adjacencyList = getAdjacencyList(graph);
+        return getMinDegree(adjacencyList);
+    }
 
-        // compute degrees
-        for (Edge edge : graph.getEdges()) {
-            vertex_to_degree.compute(edge.getFromV(), (key, val) -> val + 1);
-            vertex_to_degree.compute(edge.getToV(), (key, val) -> val + 1);
+    private int getMinDegree(HashMap<UUID, List<Edge>> adjacencyList) {
+        return Collections.min(adjacencyList.values(), Comparator.comparingInt(List::size)).size();
+    }
+
+    private HashMap<UUID, List<Edge>> getAdjacencyList(Graph graph) {
+        var adjacencyList = new HashMap<UUID, List<Edge>>();
+        for (Vertex vertex : graph.getVertices().values()) {
+            adjacencyList.put(vertex.getId(), new ArrayList<>());
         }
-
-        return Collections.min(vertex_to_degree.values());
+        for (Edge edge : graph.getEdges()) {
+            UUID source = edge.getFromV(), target = edge.getToV();
+            adjacencyList.get(source).add(edge);
+            adjacencyList.get(target).add(edge);
+        }
+        return adjacencyList;
     }
 }
