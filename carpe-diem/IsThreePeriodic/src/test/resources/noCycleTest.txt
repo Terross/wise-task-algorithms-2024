@@ -1,0 +1,9 @@
+UNDIRECTED 4
+ 3
+5bcc70e7-1b84-4e23-b23b-44f5964c2475 gray null null 229 241
+533fd586-ddb8-424f-b836-c566e8e53c79 brown null null 590 229
+8a57cdf6-23ba-4351-8280-394b6b123b67 pink null null 644 469
+a55f5491-4d7e-4c11-81b0-352304cfee52 green null null 243 495
+5bcc70e7-1b84-4e23-b23b-44f5964c2475 533fd586-ddb8-424f-b836-c566e8e53c79 gray null null 
+533fd586-ddb8-424f-b836-c566e8e53c79 8a57cdf6-23ba-4351-8280-394b6b123b67 gray null null 
+a55f5491-4d7e-4c11-81b0-352304cfee52 5bcc70e7-1b84-4e23-b23b-44f5964c2475 gray null null 
