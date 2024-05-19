@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VertexColoring2Periodic">
+    <output-path>$PROJECT_DIR$/out/artifacts/VertexColoring2Periodic</output-path>
+    <root id="archive" name="VertexColoring2Periodic.jar">
+      <element id="module-output" name="VertexColoring2Periodic" />
+    </root>
+  </artifact>
+</component>
