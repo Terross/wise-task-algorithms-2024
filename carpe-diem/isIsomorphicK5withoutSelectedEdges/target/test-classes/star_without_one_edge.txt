@@ -1,0 +1,26 @@
+DIRECTED 5
+ 19
+f72c72b8-a75d-4041-97ea-599ee59049b7 gray null null 164 247
+28cc5da5-1e01-48c3-ba2e-b10f95addb38 gray null null 366 427
+2c1f5bf5-232d-43fe-9d03-4d628397993c gray null null 297 84
+3b5862c9-2d46-46a4-857e-4a0ded3599b2 gray null null 564 86
+49a04b12-2408-4043-bd4c-acb3cc715dfa gray null null 583 285
+f72c72b8-a75d-4041-97ea-599ee59049b7 2c1f5bf5-232d-43fe-9d03-4d628397993c gray null null 
+2c1f5bf5-232d-43fe-9d03-4d628397993c f72c72b8-a75d-4041-97ea-599ee59049b7 gray null null 
+2c1f5bf5-232d-43fe-9d03-4d628397993c 28cc5da5-1e01-48c3-ba2e-b10f95addb38 gray null null 
+28cc5da5-1e01-48c3-ba2e-b10f95addb38 2c1f5bf5-232d-43fe-9d03-4d628397993c gray null null 
+f72c72b8-a75d-4041-97ea-599ee59049b7 28cc5da5-1e01-48c3-ba2e-b10f95addb38 gray null null 
+28cc5da5-1e01-48c3-ba2e-b10f95addb38 f72c72b8-a75d-4041-97ea-599ee59049b7 gray null null 
+28cc5da5-1e01-48c3-ba2e-b10f95addb38 49a04b12-2408-4043-bd4c-acb3cc715dfa gray null null 
+49a04b12-2408-4043-bd4c-acb3cc715dfa 28cc5da5-1e01-48c3-ba2e-b10f95addb38 gray null null 
+f72c72b8-a75d-4041-97ea-599ee59049b7 49a04b12-2408-4043-bd4c-acb3cc715dfa gray null null 
+49a04b12-2408-4043-bd4c-acb3cc715dfa f72c72b8-a75d-4041-97ea-599ee59049b7 gray null null 
+3b5862c9-2d46-46a4-857e-4a0ded3599b2 2c1f5bf5-232d-43fe-9d03-4d628397993c gray null null 
+3b5862c9-2d46-46a4-857e-4a0ded3599b2 49a04b12-2408-4043-bd4c-acb3cc715dfa gray null null 
+49a04b12-2408-4043-bd4c-acb3cc715dfa 3b5862c9-2d46-46a4-857e-4a0ded3599b2 gray null null 
+49a04b12-2408-4043-bd4c-acb3cc715dfa 2c1f5bf5-232d-43fe-9d03-4d628397993c gray null null 
+2c1f5bf5-232d-43fe-9d03-4d628397993c 49a04b12-2408-4043-bd4c-acb3cc715dfa gray null null 
+3b5862c9-2d46-46a4-857e-4a0ded3599b2 f72c72b8-a75d-4041-97ea-599ee59049b7 gray null null 
+f72c72b8-a75d-4041-97ea-599ee59049b7 3b5862c9-2d46-46a4-857e-4a0ded3599b2 gray null null 
+28cc5da5-1e01-48c3-ba2e-b10f95addb38 3b5862c9-2d46-46a4-857e-4a0ded3599b2 gray null null 
+3b5862c9-2d46-46a4-857e-4a0ded3599b2 28cc5da5-1e01-48c3-ba2e-b10f95addb38 gray null null 
