@@ -10,43 +10,37 @@ import java.util.UUID;
 public class SumDegIsMoreOrEqVertexCount implements GraphProperty {
     @Override
     public boolean execute(Graph graph) {
-        degrees_init(graph);
-        dfs(graph, graph.getEdges().get(0).getFromV());
+        get_degrees(graph);
+
+        int min_degree1 = Integer.MAX_VALUE;
+        int min_degree2 = Integer.MAX_VALUE;
 
         List<Integer> degrees_list = new ArrayList<Integer>(degrees.values());
 
         for (int i = 0; i < degrees_list.size(); i++) {
-            for (int j = i + 1; j < degrees_list.size(); j++) {
-                if (degrees_list.get(i) + degrees_list.get(j) < graph.getVertexCount()) {
-                    return false;
-                }
+            if (min_degree1 > degrees_list.get(i)) {
+                min_degree1 = degrees_list.get(i);
+            }
+            else if(min_degree2 > degrees_list.get(i)) {
+                min_degree2 = degrees_list.get(i);
             }
         }
-        return true;
+
+        return min_degree1 + min_degree2 > graph.getVertexCount();
     }
 
-    private HashMap<UUID, Character> visited = new HashMap<UUID, Character>();
     private HashMap <UUID, Integer> degrees = new HashMap<UUID, Integer>();
 
-    private void degrees_init(Graph graph) {
+    private void get_degrees(Graph graph) {
         for (UUID vertex_id: graph.getVertices().keySet()) {
             degrees.put(vertex_id, 0);
         }
-    }
 
-    private void dfs(Graph graph , UUID start){
         for(Edge edge: graph.getEdges()){
             UUID from = edge.getFromV();
             UUID to = edge.getToV();
-            visited.put(from, 'T');
-            visited.put(to,'T');
             degrees.put(from, degrees.get(from) + 1);
-            if(to != null) {
-                degrees.put(to, degrees.get(to) + 1);
-                if (!visited.containsKey(to)) {
-                    dfs(graph, to);
-                }
-            }
+            degrees.put(to, degrees.get(to) + 1);
         }
     }
 }
