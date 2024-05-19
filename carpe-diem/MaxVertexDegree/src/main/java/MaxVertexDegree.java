@@ -17,7 +17,7 @@ public class MaxVertexDegree implements GraphCharacteristic {
 
         for (var edge : edges) {
             adjList.get(edge.getFromV()).add(vertices.get(edge.getToV()));
-            adjList.get(edge.getToV()).add(vertices.get(edge.getFromV())); // Добавьте эту строку
+            adjList.get(edge.getToV()).add(vertices.get(edge.getFromV()));
         }
         return adjList;
     }
