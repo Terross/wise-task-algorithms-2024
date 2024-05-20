@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="IsGraph3ConnectedAfterEdgeContraction">
+    <output-path>$PROJECT_DIR$/out/artifacts/IsGraph3ConnectedAfterEdgeContraction</output-path>
+    <root id="archive" name="IsGraph3ConnectedAfterEdgeContraction.jar">
+      <element id="module-output" name="IsGraph3ConnectedAfterEdgeContraction" />
+    </root>
+  </artifact>
+</component>
