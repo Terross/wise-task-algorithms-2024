@@ -3,7 +3,6 @@
     <output-path>$PROJECT_DIR$/out/productin/deg_v_even/artifacts/deg_v_even_jar</output-path>
     <root id="archive" name="deg_v_even.jar">
       <element id="module-output" name="deg_v_even" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/math-system-1_0-SNAPSHOT.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
