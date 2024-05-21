@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="TransitiveClosure">
-    <output-path>$PROJECT_DIR$/out/artifacts/TransitiveClosure</output-path>
-    <root id="archive" name="TransitiveClosure.jar">
-      <element id="module-output" name="NodesEqEdges" />
-    </root>
-  </artifact>
-</component>
