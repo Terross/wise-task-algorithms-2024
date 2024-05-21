@@ -49,17 +49,8 @@ public class AdjacencyMatrix {
                 matrix[i][j] = 0;
 
         for (Edge edge : graph.getEdges())
-            if (edge.getColor() == color) {
-                if (graph.getVertices().get(edge.getFromV()).getColor() == color &&
-                        graph.getVertices().get(edge.getToV()).getColor() == color) {
-                    matrix[getIndexVertex(edge.getFromV())][getIndexVertex(edge.getToV())] = 1;
-                }
-                else {
-                    vertexes = null;
-                    matrix = null;
-                    return;
-                }
-            }
+            if (edge.getColor() == color)
+                matrix[getIndexVertex(edge.getFromV())][getIndexVertex(edge.getToV())] = 1;
 
         if (graph.getDirectType() == GraphType.UNDIRECTED)
             for (int i = 0; i < vertexes.length; ++i)
