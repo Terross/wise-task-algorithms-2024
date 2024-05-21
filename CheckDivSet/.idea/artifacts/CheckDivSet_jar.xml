@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="CheckDivSet:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/CheckDivSet_jar</output-path>
-    <root id="archive" name="CheckDivSet.jar">
-      <element id="module-output" name="CheckDivSet" />
-    </root>
-  </artifact>
-</component>
