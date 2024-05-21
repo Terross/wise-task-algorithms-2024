@@ -11,33 +11,33 @@ public class IsTwoCriticalTest {
 
     @Test
     public void trueGraph() throws FileNotFoundException {
-        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
+        IsTwoCritical IsTwoCritical = new IsTwoCritical();
         var trueGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/graph_k2.txt"));
-        assertThat(IsTwoCriticalTest.execute(trueGraph)).isTrue();
+        assertThat(IsTwoCritical.execute(trueGraph)).isTrue();
     }
     @Test
     public void unconnectedGraph() throws FileNotFoundException {
-        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
+        IsTwoCritical IsTwoCritical = new IsTwoCritical();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/unconnectedgraph.txt"));
-        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCritical.execute(falseGraph)).isFalse();
     }
     @Test
     public void starGraph() throws FileNotFoundException {
-        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
+        IsTwoCritical IsTwoCritical = new IsTwoCritical();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/starcube.txt"));
-        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCritical.execute(falseGraph)).isFalse();
     }
     @Test
     public void emptyGraph() throws FileNotFoundException {
-        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
+        IsTwoCritical IsTwoCritical = new IsTwoCritical();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/emptygraph.txt"));
-        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCritical.execute(falseGraph)).isFalse();
     }
     @Test
     public void twoCompsGraph() throws FileNotFoundException {
-        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
+        IsTwoCritical IsTwoCritical = new IsTwoCritical();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/2comps1cube.txt"));
-        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCritical.execute(falseGraph)).isFalse();
     }
 
 }
