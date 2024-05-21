@@ -3,7 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/IsWheel_jar</output-path>
     <root id="archive" name="IsWheel.jar">
       <element id="module-output" name="IsWheel" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/math-system-1_0-SNAPSHOT.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
