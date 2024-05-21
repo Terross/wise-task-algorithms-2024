@@ -26,7 +26,7 @@
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
             <type>jar</type>
-            <systemPath>C:/Users/Zorin/Desktop/mishIgr_wise-task-algorithms-2024-main/example/FindCube/src/main/math-system-1_0-SNAPSHOT.jar</systemPath>
+            <systemPath>C:/Users/bulterier04/Desktop/university/4_semestr/китгр/dima_koresh/mishIgr_wise-task-algorithms-2024/FindCube/src/main/math-system-1_0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
