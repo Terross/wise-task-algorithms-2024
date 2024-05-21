@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/FindCube</output-path>
+    <root id="archive" name="unnamed.jar">
+      <element id="module-output" name="NodesEqEdges" />
+    </root>
+  </artifact>
+</component>
