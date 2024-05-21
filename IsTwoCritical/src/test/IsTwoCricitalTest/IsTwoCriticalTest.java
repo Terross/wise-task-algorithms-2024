@@ -11,33 +11,33 @@ public class IsTwoCriticalTest {
 
     @Test
     public void trueGraph() throws FileNotFoundException {
-        NodesEqEdges nodesEqEdges = new NodesEqEdges();
+        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
         var trueGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/graph_k2.txt"));
-        assertThat(nodesEqEdges.execute(trueGraph)).isTrue();
+        assertThat(IsTwoCriticalTest.execute(trueGraph)).isTrue();
     }
     @Test
     public void unconnectedGraph() throws FileNotFoundException {
-        NodesEqEdges nodesEqEdges = new NodesEqEdges();
+        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/unconnectedgraph.txt"));
-        assertThat(nodesEqEdges.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
     }
     @Test
     public void starGraph() throws FileNotFoundException {
-        NodesEqEdges nodesEqEdges = new NodesEqEdges();
+        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/starcube.txt"));
-        assertThat(nodesEqEdges.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
     }
     @Test
     public void emptyGraph() throws FileNotFoundException {
-        NodesEqEdges nodesEqEdges = new NodesEqEdges();
+        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/emptygraph.txt"));
-        assertThat(nodesEqEdges.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
     }
     @Test
     public void twoCompsGraph() throws FileNotFoundException {
-        NodesEqEdges nodesEqEdges = new NodesEqEdges();
+        IsTwoCriticalTest IsTwoCriticalTest = new IsTwoCriticalTest();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/2comps1cube.txt"));
-        assertThat(nodesEqEdges.execute(falseGraph)).isFalse();
+        assertThat(IsTwoCriticalTest.execute(falseGraph)).isFalse();
     }
 
 }
