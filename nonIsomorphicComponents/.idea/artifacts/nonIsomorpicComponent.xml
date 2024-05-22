@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="nonIsomorpicComponent">
+    <output-path>$PROJECT_DIR$/out/artifacts/nonIsomorpicComponent</output-path>
+    <root id="archive" name="nonIsomorpicComponent.jar">
+      <element id="module-output" name="nonIsomorphicComponents" />
+    </root>
+  </artifact>
+</component>
