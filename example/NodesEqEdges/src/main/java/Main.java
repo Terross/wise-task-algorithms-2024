@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         NodesEqEdges nodesEqEdges = new NodesEqEdges();
-        var testGraph = GraphFactory.loadGraphFromFile(new File("src/main/resources/graph.txt"));
+        var testGraph = GraphFactory.loadGraphFromFile(new File("/home/egor/C++/wise-task-algorithms-2024/example/NodesEqEdges/src/main/resources/"));
         boolean result = nodesEqEdges.execute(testGraph);
         System.out.println(result);
     }
