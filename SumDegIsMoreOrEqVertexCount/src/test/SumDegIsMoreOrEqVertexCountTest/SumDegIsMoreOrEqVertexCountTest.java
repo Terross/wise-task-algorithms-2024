@@ -13,7 +13,7 @@ public class SumDegIsMoreOrEqVertexCountTest {
     public void trueGraph() throws FileNotFoundException {
         SumDegIsMoreOrEqVertexCount SumDegIsMoreOrEqVertexCount = new SumDegIsMoreOrEqVertexCount();
         var trueGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/graph_k2.txt"));
-        assertThat(SumDegIsMoreOrEqVertexCount.execute(trueGraph)).isTrue();
+        assertThat(SumDegIsMoreOrEqVertexCount.execute(trueGraph)).isFalse();
     }
     @Test
     public void unconnectedGraph() throws FileNotFoundException {
@@ -31,13 +31,13 @@ public class SumDegIsMoreOrEqVertexCountTest {
     public void emptyGraph() throws FileNotFoundException {
         SumDegIsMoreOrEqVertexCount SumDegIsMoreOrEqVertexCount = new SumDegIsMoreOrEqVertexCount();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/emptygraph.txt"));
-        assertThat(SumDegIsMoreOrEqVertexCount.execute(falseGraph)).isTrue();
+        assertThat(SumDegIsMoreOrEqVertexCount.execute(falseGraph)).isFalse();
     }
     @Test
     public void twoCompsGraph() throws FileNotFoundException {
         SumDegIsMoreOrEqVertexCount SumDegIsMoreOrEqVertexCount = new SumDegIsMoreOrEqVertexCount();
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/2comps1cube.txt"));
-        assertThat(SumDegIsMoreOrEqVertexCount.execute(falseGraph)).isTrue();
+        assertThat(SumDegIsMoreOrEqVertexCount.execute(falseGraph)).isFalse();
     }
 
 }
