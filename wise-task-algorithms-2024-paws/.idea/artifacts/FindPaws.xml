@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="FindPaws">
+    <output-path>$PROJECT_DIR$/FindPaws/out/artifacts/FindPaws</output-path>
+    <root id="archive" name="FindPaws.jar">
+      <element id="module-output" name="FindPaws" />
+    </root>
+  </artifact>
+</component>
