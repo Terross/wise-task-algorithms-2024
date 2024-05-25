@@ -25,30 +25,55 @@ public class Simple2ways implements GraphProperty {
                 j += 1;
             }
         }
-
         Graphs gr = new Graphs(graph.getVertexCount());
         for (int i = 0; i < edges.size(); i++) {
-            gr.addEdge(ind_vertex.get(edges.get(i).getFromV().toString()), ind_vertex.get(edges.get(i).getToV().toString()));
-            gr.addEdge(ind_vertex.get(edges.get(i).getToV().toString()), ind_vertex.get(edges.get(i).getFromV().toString()));
+            if (graph.getDirectType().toString() == "DIRECTED") {
+                gr.addEdge(ind_vertex.get(edges.get(i).getFromV().toString()), ind_vertex.get(edges.get(i).getToV().toString()));
+            } else {
+                gr.addEdge(ind_vertex.get(edges.get(i).getFromV().toString()), ind_vertex.get(edges.get(i).getToV().toString()));
+                gr.addEdge(ind_vertex.get(edges.get(i).getToV().toString()), ind_vertex.get(edges.get(i).getFromV().toString()));
+            }
         }
-        for (int i = 1; i <= graph.getVertexCount(); i++) {
-            for (int v = graph.getVertexCount(); v >= i; v--) {
-                if (i != v) {
-                    List<List<Integer>> paths = gr.findPaths(i, v);
+        if (graph.getDirectType().toString() == "DIRECTED") {
+            for (int i = 1; i <= graph.getVertexCount(); i++) {
+                for (int v = graph.getVertexCount(); v >= i; v--) {
+                    if (i != v) {
+                        List<List<Integer>> paths = gr.findPaths(i, v);
 
 
-                    if (paths.isEmpty()) {
-                        return false;
-                    } else {
-                        List<List<Integer>> match = findMatchingArrays(paths);
-                        if(match.isEmpty()){
+                        if (paths.isEmpty()) {
                             return false;
+                        } else {
+                            List<List<Integer>> match = findMatchingArrays(paths);
+                            if (match.isEmpty()) {
+                                return false;
+                            }
                         }
                     }
                 }
             }
+            return true;
         }
-        return true;
+        else {
+            for (int i = 1; i <= graph.getVertexCount(); i++) {
+                for (int v = i+1; v <=graph.getVertexCount(); v++) {
+                    if (i != v) {
+                        List<List<Integer>> paths = gr.findPaths(i, v);
+
+
+                        if (paths.isEmpty()) {
+                            return false;
+                        } else {
+                            List<List<Integer>> match = findMatchingArrays(paths);
+                            if (match.isEmpty()) {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
     }
 
 
@@ -119,6 +144,7 @@ public class Simple2ways implements GraphProperty {
                 if (isMatchingArray(arrays.get(i), arrays.get(j))) {
                     matchingArrays.add(arrays.get(i));
                     matchingArrays.add(arrays.get(j));
+                    return matchingArrays;
                 }
             }
         }
