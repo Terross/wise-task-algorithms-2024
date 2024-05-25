@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="Simple2ways">
-    <output-path>$PROJECT_DIR$/out/artifacts/Simple2ways</output-path>
-    <root id="archive" name="Simple2ways.jar">
-      <element id="module-output" name="Simple2ways" />
-    </root>
-  </artifact>
-</component>
