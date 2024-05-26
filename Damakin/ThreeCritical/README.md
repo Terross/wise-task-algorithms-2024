@@ -71,7 +71,7 @@
 6. Метод isLessThreeChromatic:
 
 
-  Аналогичен методу isThreeChromatic, но возвращает true, если хроматическое число графа не превышает 3.
+  Аналогичен методу isThreeChromatic, но возвращает true, если хроматическое число графа меньше 3.
 
   
 7. Метод removeVertexAndEdges:
