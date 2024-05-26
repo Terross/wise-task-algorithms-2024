@@ -1,0 +1,28 @@
+UNDIRECTED 11
+ 15
+2db38600-b8b2-4214-873e-e17a56aa114f gray null null 541 218
+c552c8ea-fc16-4216-a6f1-0866ca9e21e0 gray null null 443 295
+e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 gray null null 603 477
+bf103e98-8218-4919-986b-1086bc4a753f gray null null 665 598
+b90417b3-cf13-4c98-8d09-a3011d5c650c gray null null 757 554
+398739d7-0018-4560-ae92-168077f1ab15 gray null null 466 448
+e995cda0-25dd-4cb6-862d-1c5f194c8953 gray null null 513 570
+b338d6a8-9791-4fec-8da7-059c8bb2bbc4 gray null null 753 292
+ceac4b8c-70cb-42c0-ab9c-4f2dbccc7475 gray null null 760 419
+c2b47429-b5f3-4e60-8594-5343658914e0 gray null null 620 227
+727fc7ee-cd18-4b4b-a93c-2b77e756641f gray null null 676 249
+c552c8ea-fc16-4216-a6f1-0866ca9e21e0 2db38600-b8b2-4214-873e-e17a56aa114f red null null 
+c552c8ea-fc16-4216-a6f1-0866ca9e21e0 e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 red null null 
+e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 2db38600-b8b2-4214-873e-e17a56aa114f red null null 
+e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 bf103e98-8218-4919-986b-1086bc4a753f red null null 
+e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 b90417b3-cf13-4c98-8d09-a3011d5c650c red null null 
+bf103e98-8218-4919-986b-1086bc4a753f b90417b3-cf13-4c98-8d09-a3011d5c650c red null null 
+398739d7-0018-4560-ae92-168077f1ab15 e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 red null null 
+398739d7-0018-4560-ae92-168077f1ab15 e995cda0-25dd-4cb6-862d-1c5f194c8953 red null null 
+e995cda0-25dd-4cb6-862d-1c5f194c8953 e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 red null null 
+e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 b338d6a8-9791-4fec-8da7-059c8bb2bbc4 red null null 
+e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 ceac4b8c-70cb-42c0-ab9c-4f2dbccc7475 red null null 
+ceac4b8c-70cb-42c0-ab9c-4f2dbccc7475 b338d6a8-9791-4fec-8da7-059c8bb2bbc4 red null null 
+c2b47429-b5f3-4e60-8594-5343658914e0 727fc7ee-cd18-4b4b-a93c-2b77e756641f red null null 
+c2b47429-b5f3-4e60-8594-5343658914e0 e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 red null null 
+e9ba1158-5ee0-4ec8-97ec-3fed6a39b179 727fc7ee-cd18-4b4b-a93c-2b77e756641f red null null 
