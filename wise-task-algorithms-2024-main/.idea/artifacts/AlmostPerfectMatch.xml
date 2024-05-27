@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="AlmostPerfectMatch">
+    <output-path>$PROJECT_DIR$/out/artifacts/AlmostPerfectMatch</output-path>
+    <root id="archive" name="AlmostPerfectMatch.jar">
+      <element id="module-output" name="AlmostPerfectMatch" />
+    </root>
+  </artifact>
+</component>
