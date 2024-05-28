@@ -72,6 +72,7 @@ public class NodesEqEdges implements GraphProperty {
         return graph.getEdgeCount().equals(graph.getVertexCount());
     }
 }
+```
 
 ## 4. Ручное тестирование
 1. Скачиваем граф файлом
@@ -81,7 +82,7 @@ public class NodesEqEdges implements GraphProperty {
 import com.mathsystem.api.graph.GraphFactory;
 
 import java.io.File;
-import java.io.F<≤>leNotFoundException;
+import java.io.FileNotFoundException;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
@@ -139,4 +140,3 @@ public class NodesEqEdgesTest {
 
 ## 9. Составление задачи
 После того, как модуль будет добавлен в систему можно будет составлять задачи с ним в констуркторе задач
-
