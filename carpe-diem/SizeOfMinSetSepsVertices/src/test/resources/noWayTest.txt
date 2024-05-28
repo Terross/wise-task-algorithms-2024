@@ -1,0 +1,6 @@
+DIRECTED 3
+ 1
+8abc8abd-3a22-48c3-a9a6-a715ddf26da3 red null null 85 145
+2e20dae1-40f9-4140-8611-959fd8986d85 blue null null 342 111
+b2c121da-13d4-4b3b-ae2e-24abbe134d97 gray null null 166 346
+8abc8abd-3a22-48c3-a9a6-a715ddf26da3 b2c121da-13d4-4b3b-ae2e-24abbe134d97 gray null null 

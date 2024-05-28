@@ -1,0 +1,23 @@
+UNDIRECTED 7
+ 14
+00d9de8c-7a30-4a1e-97d8-bb4b21eadcf2 gray null null 105 103
+dea23f63-f61b-4bec-8eea-b2291fa7101e gray null null 326 98
+1e4ba44a-066e-424d-b9fd-9912de734b35 gray null null 147 192
+42df74e1-28ce-4503-bd91-af33adac6b6a gray null null 259 276
+e4e448c3-8286-4cef-9383-d4e859b3852d gray null null 47 244
+00f296ed-05bf-44ea-b5f7-04fc1c81098c gray null null 391 426
+f287d3b4-2d9c-4910-8640-e8a99e55fb01 gray null null 454 153
+dea23f63-f61b-4bec-8eea-b2291fa7101e 00d9de8c-7a30-4a1e-97d8-bb4b21eadcf2 gray null null
+1e4ba44a-066e-424d-b9fd-9912de734b35 00d9de8c-7a30-4a1e-97d8-bb4b21eadcf2 gray null null
+1e4ba44a-066e-424d-b9fd-9912de734b35 42df74e1-28ce-4503-bd91-af33adac6b6a gray null null
+dea23f63-f61b-4bec-8eea-b2291fa7101e 42df74e1-28ce-4503-bd91-af33adac6b6a gray null null
+00d9de8c-7a30-4a1e-97d8-bb4b21eadcf2 e4e448c3-8286-4cef-9383-d4e859b3852d gray null null
+1e4ba44a-066e-424d-b9fd-9912de734b35 e4e448c3-8286-4cef-9383-d4e859b3852d gray null null
+e4e448c3-8286-4cef-9383-d4e859b3852d 42df74e1-28ce-4503-bd91-af33adac6b6a gray null null
+1e4ba44a-066e-424d-b9fd-9912de734b35 dea23f63-f61b-4bec-8eea-b2291fa7101e gray null null
+e4e448c3-8286-4cef-9383-d4e859b3852d 00f296ed-05bf-44ea-b5f7-04fc1c81098c gray null null
+42df74e1-28ce-4503-bd91-af33adac6b6a 00f296ed-05bf-44ea-b5f7-04fc1c81098c gray null null
+dea23f63-f61b-4bec-8eea-b2291fa7101e 00f296ed-05bf-44ea-b5f7-04fc1c81098c gray null null
+f287d3b4-2d9c-4910-8640-e8a99e55fb01 42df74e1-28ce-4503-bd91-af33adac6b6a gray null null
+dea23f63-f61b-4bec-8eea-b2291fa7101e f287d3b4-2d9c-4910-8640-e8a99e55fb01 gray null null
+f287d3b4-2d9c-4910-8640-e8a99e55fb01 00f296ed-05bf-44ea-b5f7-04fc1c81098c gray null null
