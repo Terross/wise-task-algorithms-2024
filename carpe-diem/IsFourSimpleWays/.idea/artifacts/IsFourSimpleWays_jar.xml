@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="IsFourSimpleWays:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/IsFourSimpleWays_jar</output-path>
-    <root id="archive" name="IsFourSimpleWays.jar">
-      <element id="module-output" name="IsFourSimpleWays" />
-    </root>
-  </artifact>
-</component>
