@@ -1,6 +1,5 @@
 import com.mathsystem.api.graph.GraphFactory;
 import org.junit.Test;
-import ru.leti.CheckTeit;
 
 import java.io.File;
 import java.io.FileNotFoundException;
