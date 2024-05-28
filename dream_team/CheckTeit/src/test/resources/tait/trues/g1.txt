@@ -1,0 +1,7 @@
+UNDIRECTED 3
+ 2
+5662a59a-30c4-42f9-99fe-796887d219a1 gray null null 549 115
+37873d6d-b87c-4b5a-ac47-7a9b3b6a3553 gray null null 339 119
+239892d9-b191-4d60-8117-bea7ada1f9cd gray null null 446 116
+37873d6d-b87c-4b5a-ac47-7a9b3b6a3553 239892d9-b191-4d60-8117-bea7ada1f9cd red null null 
+239892d9-b191-4d60-8117-bea7ada1f9cd 5662a59a-30c4-42f9-99fe-796887d219a1 green null null 
