@@ -1,0 +1,18 @@
+UNDIRECTED 8
+ 8
+295e6c96-a391-4bb9-ae68-db54c3d7edcc gray null null 159 83
+d34431dd-8d8a-4a9c-9168-d6e0ebf782a6 gray null null 292 79
+a8d248c2-a771-4d52-8e8e-972c35de914e gray null null 455 78
+e3762e33-55ed-46b2-9c83-2a13c7597890 gray null null 232 295
+02129f2e-e361-46b0-bb95-b2139d5c2a00 gray null null 369 302
+3bfbe96e-d04c-4147-90ab-9249fb243ba5 gray null null 531 294
+10c6a27e-3bbe-43df-9de1-9e17b481a447 gray null null 152 -3
+30b5d15e-c9d8-4e25-9617-84d76eb256a0 gray null null 539 5
+e3762e33-55ed-46b2-9c83-2a13c7597890 d34431dd-8d8a-4a9c-9168-d6e0ebf782a6 gray null null 
+295e6c96-a391-4bb9-ae68-db54c3d7edcc 02129f2e-e361-46b0-bb95-b2139d5c2a00 gray null null 
+e3762e33-55ed-46b2-9c83-2a13c7597890 a8d248c2-a771-4d52-8e8e-972c35de914e gray null null 
+d34431dd-8d8a-4a9c-9168-d6e0ebf782a6 a8d248c2-a771-4d52-8e8e-972c35de914e gray null null 
+295e6c96-a391-4bb9-ae68-db54c3d7edcc d34431dd-8d8a-4a9c-9168-d6e0ebf782a6 gray null null 
+10c6a27e-3bbe-43df-9de1-9e17b481a447 d34431dd-8d8a-4a9c-9168-d6e0ebf782a6 gray null null 
+d34431dd-8d8a-4a9c-9168-d6e0ebf782a6 30b5d15e-c9d8-4e25-9617-84d76eb256a0 gray null null 
+3bfbe96e-d04c-4147-90ab-9249fb243ba5 02129f2e-e361-46b0-bb95-b2139d5c2a00 gray null null 
