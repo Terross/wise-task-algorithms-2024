@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="deg_v_even:jar">
+    <output-path>$PROJECT_DIR$/out/productin/deg_v_even/artifacts/deg_v_even_jar</output-path>
+    <root id="archive" name="deg_v_even.jar">
+      <element id="module-output" name="deg_v_even" />
+    </root>
+  </artifact>
+</component>
