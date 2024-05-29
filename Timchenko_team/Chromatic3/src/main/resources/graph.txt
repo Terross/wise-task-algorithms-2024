@@ -1,0 +1,6 @@
+UNDIRECTED 3
+ 1
+55abc802-7686-4649-8f4a-2643c81c4756 gray null null 359 255
+adf1c684-dd15-4ee7-92f7-61eda4cdcdbd gray null null 345 127
+5715109e-fca8-4725-9bcc-e7ceb55d4aef gray null null 482 215
+5715109e-fca8-4725-9bcc-e7ceb55d4aef adf1c684-dd15-4ee7-92f7-61eda4cdcdbd gray null null 

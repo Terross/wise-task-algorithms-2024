@@ -1,0 +1,5 @@
+UNDIRECTED 2
+ 1
+f920b1dc-9cb7-48ce-a4cc-db001828f719 gray null null 146 185
+7f3192c6-849a-4853-a56a-a90f78597cc7 gray null null 206 143
+7f3192c6-849a-4853-a56a-a90f78597cc7 f920b1dc-9cb7-48ce-a4cc-db001828f719 blue null null 
