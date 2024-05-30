@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="k4subdivision">
+    <output-path>$PROJECT_DIR$/out/artifacts/k4subdivision</output-path>
+    <root id="archive" name="k4subdivision.jar">
+      <element id="module-output" name="K4subdivision" />
+    </root>
+  </artifact>
+</component>

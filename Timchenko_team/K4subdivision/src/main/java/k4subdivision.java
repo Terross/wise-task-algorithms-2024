@@ -42,6 +42,7 @@ class Graphs {
 
     public void addEdge(int startNode, int endNode) {
         this.nodes.get(startNode - 1).addNeighbor(this.nodes.get(endNode - 1));
+        this.nodes.get(endNode - 1).addNeighbor(this.nodes.get(startNode - 1));
     }
 
     public List<List<Node>> findComponents() {
