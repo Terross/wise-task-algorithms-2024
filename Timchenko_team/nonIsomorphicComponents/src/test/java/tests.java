@@ -57,4 +57,12 @@ public class tests {
 
         assertThat(nonIsomorphicComponents.execute(falseGraph)).isFalse();
     }
+
+    @Test
+    public void HardTest() throws FileNotFoundException {
+        NonIsomorphicComponents nonIsomorphicComponents = new NonIsomorphicComponents();
+        var trueGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/сложный пример.txt"));
+
+        assertThat(nonIsomorphicComponents.execute(trueGraph)).isTrue();
+    }
 }
