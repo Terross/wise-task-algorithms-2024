@@ -1,12 +1,11 @@
-package ru.leti;
+import com.mathsystem.api.graph.model.Edge;
 import com.mathsystem.api.graph.model.Graph;
 import com.mathsystem.api.graph.model.Vertex;
-import com.mathsystem.api.graph.model.Edge;
 import com.mathsystem.domain.plugin.plugintype.GraphCharacteristic;
 
 import java.util.*;
 
-public class CountDeficit implements GraphCharacteristic {
+public class CountDeficit228 implements GraphCharacteristic {
     @Override
     public Integer execute(Graph graph) {
         if (!isBipartite(graph)) {
@@ -24,6 +23,14 @@ public class CountDeficit implements GraphCharacteristic {
 
     private static boolean isBipartite(Graph graph) {
         Map<UUID, Vertex> vertices = graph.getVertices();
+        Map<UUID, List<UUID>> adjacencyList = new HashMap<>();
+
+        // Заполняем карту смежности
+        for (Edge edge : graph.getEdges()) {
+            adjacencyList.computeIfAbsent(edge.getFromV(), k -> new ArrayList<>()).add(edge.getToV());
+            adjacencyList.computeIfAbsent(edge.getToV(), k -> new ArrayList<>()).add(edge.getFromV());
+        }
+
         Set<UUID> visited = new HashSet<>();
         Map<UUID, Integer> colors = new HashMap<>();
 
@@ -41,18 +48,15 @@ public class CountDeficit implements GraphCharacteristic {
                     int currentColor = colors.get(currentVertex);
                     int neighborColor = 1 - currentColor; // Соседние вершины должны иметь противоположный цвет
 
-                    // Получаем все рёбра графа
-                    List<Edge> edges = graph.getEdges();
+                    // Получаем соседей текущей вершины
+                    List<UUID> neighbors = adjacencyList.getOrDefault(currentVertex, new ArrayList<>());
 
-                    for (Edge edge : edges) {
-                        if (edge.getFromV().equals(currentVertex)) { // Проверка начальной вершины ребра
-                            UUID neighborId = edge.getToV();
-                            if (!colors.containsKey(neighborId)) {
-                                colors.put(neighborId, neighborColor);
-                                queue.add(neighborId);
-                            } else if (colors.get(neighborId) != neighborColor) {
-                                return false; // Если сосед имеет неверный цвет, то граф не двудольный
-                            }
+                    for (UUID neighborId : neighbors) {
+                        if (!colors.containsKey(neighborId)) {
+                            colors.put(neighborId, neighborColor);
+                            queue.add(neighborId);
+                        } else if (colors.get(neighborId) != neighborColor) {
+                            return false; // Если сосед имеет неверный цвет, то граф не двудольный
                         }
                     }
                 }
@@ -93,10 +97,11 @@ public class CountDeficit implements GraphCharacteristic {
         used[index] = true;
 
         for (Edge edge : edges) {
-            if (edge.getFromV().equals(v)) { // Проверка начальной вершины ребра
+            if (edge.getFromV().equals(v)) {
                 UUID to = edge.getToV();
                 if (matching.get(to) == null || dfs(matching.get(to), edges, matching, used, vertexIndices)) {
                     matching.put(to, v);
+                    matching.put(v, to);
                     return true;
                 }
             }
