@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="FourConnectedGraph">
+    <output-path>$PROJECT_DIR$/out/artifacts/FourConnectedGraph</output-path>
+    <root id="archive" name="FourConnectedGraph.jar">
+      <element id="module-output" name="FourConnectedGraph" />
+    </root>
+  </artifact>
+</component>
