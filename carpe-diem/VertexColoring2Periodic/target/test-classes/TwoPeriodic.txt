@@ -1,9 +1,0 @@
-UNDIRECTED 4
- 3
-adee00e3-326b-4334-bf39-e34870f40409 brown null null -35 62
-079e6e80-47d3-4368-807a-18addde48bac green null null 79 307
-57d9007d-f309-4591-802f-82f0ca9844ad blue null null 404 54
-3cc7a4d9-6d8c-4691-9ba2-769a309cdf6e yellow null null 434 329
-adee00e3-326b-4334-bf39-e34870f40409 079e6e80-47d3-4368-807a-18addde48bac gray null null 
-079e6e80-47d3-4368-807a-18addde48bac 57d9007d-f309-4591-802f-82f0ca9844ad gray null null 
-57d9007d-f309-4591-802f-82f0ca9844ad 3cc7a4d9-6d8c-4691-9ba2-769a309cdf6e gray null null 

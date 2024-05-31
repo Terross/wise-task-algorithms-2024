@@ -1,6 +1,0 @@
-UNDIRECTED 4
- 0
-7485a6b1-afdc-4d0e-9817-6184f61b1905 pink null null 438 460
-47834537-5927-4739-92a2-ab59b386d2f8 red null null 757 415
-d092662b-30df-4190-95c0-8a42c9493a80 blue null null 724 784
-7dd6cb98-4eaf-486d-8adf-2774c8e7e326 green null null 146 842

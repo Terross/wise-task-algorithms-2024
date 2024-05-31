@@ -1,0 +1,5 @@
+UNDIRECTED 2
+ 1
+9c08e481-7112-455b-b38d-c466a960f075 red null null 457 390
+7b43712a-fed0-4d37-8c40-a10f531f371f red null null 462 296
+7b43712a-fed0-4d37-8c40-a10f531f371f 9c08e481-7112-455b-b38d-c466a960f075 gray null null 

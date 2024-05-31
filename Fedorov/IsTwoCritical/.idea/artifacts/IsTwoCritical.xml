@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="IsTwoCritical">
-    <output-path>$PROJECT_DIR$/out/artifacts/IsTwoCritical</output-path>
-    <root id="archive" name="IsTwoCritical.jar">
-      <element id="module-output" name="IsTwoCritical" />
-    </root>
-  </artifact>
-</component>

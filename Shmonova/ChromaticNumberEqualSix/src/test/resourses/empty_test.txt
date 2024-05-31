@@ -1,8 +1,0 @@
-UNDIRECTED 6
- 0
-f87a9614-155f-4ff0-8ee6-f39c46797df0 gray null null 271 227
-407d82d9-a1ef-4b96-b71d-8a0523a3ea66 gray null null 331 179
-51b822d4-1c78-4790-a6f2-e905181e78dd gray null null 243 310
-a80a97ca-e2cd-4bfb-933b-1b7bfd735138 gray null null 322 355
-338744c2-7990-47a7-b700-43618cdc602f gray null null 482 303
-b45d3a95-d7f4-4041-bf3f-d755c4055786 gray null null 435 197
