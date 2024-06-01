@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="OnePlanarGraph">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/OnePlanarGraph/OnePlanarGraph.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
