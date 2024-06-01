@@ -1,0 +1,6 @@
+DIRECTED 2
+ 2
+419791fd-ccf5-4025-8e9a-985ee7e1d81e gray null null 339 234
+96a4f7d9-96ce-4bc3-a27b-e8608bbfce66 gray null null 482 148
+419791fd-ccf5-4025-8e9a-985ee7e1d81e 96a4f7d9-96ce-4bc3-a27b-e8608bbfce66 gray null null 
+96a4f7d9-96ce-4bc3-a27b-e8608bbfce66 419791fd-ccf5-4025-8e9a-985ee7e1d81e gray null null 
