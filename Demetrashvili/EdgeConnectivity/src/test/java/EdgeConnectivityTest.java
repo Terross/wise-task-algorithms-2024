@@ -12,18 +12,18 @@ public class EdgeConnectivityTest {
     @Test
     public void activateSimpleTest() throws FileNotFoundException {
         var isPlanarWithoutSomeEdge = new EdgeConnectivity();
-        var trueGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/trueGraph.txt"));
+        var K3_3 = GraphFactory.loadGraphFromFile(new File("src/test/resources/trueGraph.txt"));
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/falseGraph.txt"));
 
-        assertThat(isPlanarWithoutSomeEdge.execute(trueGraph)).isTrue();
+        assertThat(isPlanarWithoutSomeEdge.execute(K3_3)).isTrue();
         assertThat(isPlanarWithoutSomeEdge.execute(falseGraph)).isFalse();
     }
 
     @Test
     public void oneDoteSimpleTest() throws FileNotFoundException {
         var isPlanarWithoutSomeEdge = new EdgeConnectivity();
-        var oneDotGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/1.txt"));
-        assertThat(isPlanarWithoutSomeEdge.execute(oneDotGraph)).isFalse();
+        var K5 = GraphFactory.loadGraphFromFile(new File("src/test/resources/1.txt"));
+        assertThat(isPlanarWithoutSomeEdge.execute(K5)).isTrue();
     }
 
     @Test
