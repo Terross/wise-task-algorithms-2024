@@ -7,8 +7,8 @@ import java.util.*;
 
 public class NumberFacesPlanarGraph implements GraphCharacteristic {
 
-    private int vertexes_count = 0;
-    private ArrayList<ArrayList<Integer>> adjacency_matrix;
+    private int vertexesCount = 0;
+    private ArrayList<ArrayList<Integer>> adjacencyMatrix;
 
     @Override
     public Integer execute(Graph graph) {
@@ -74,7 +74,7 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
 
         setValues(graph);
 
-        if (vertexes_count <= 4) {
+        if (vertexesCount <= 4) {
             return true;
         }
 
@@ -84,14 +84,14 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
     }
 
     private void setValues(Graph graph) {
-        vertexes_count = graph.getVertexCount();
+        vertexesCount = graph.getVertexCount();
         int edges_count = graph.getEdgeCount();
         List<Edge> edges = graph.getEdges();
         List<UUID> vertexes = new ArrayList<>();
-        adjacency_matrix = new ArrayList<>(vertexes_count);
+        adjacencyMatrix = new ArrayList<>(vertexesCount);
 
-        for (int i = 0; i < vertexes_count; i++)
-            adjacency_matrix.add(new ArrayList<>());
+        for (int i = 0; i < vertexesCount; i++)
+            adjacencyMatrix.add(new ArrayList<>());
 
         for (int i = 0; i < edges_count; i++) {
             Edge edge = edges.get(i);
@@ -104,19 +104,19 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
     }
 
     private void addEdge(int v, int w) {
-        adjacency_matrix.get(v).add(w);
-        adjacency_matrix.get(w).add(v);
+        adjacencyMatrix.get(v).add(w);
+        adjacencyMatrix.get(w).add(v);
     }
 
     private boolean checkForK5() {
-        for (int x = 0; x < vertexes_count; x++)
-            for (int y : adjacency_matrix.get(x))
-                for (int z : adjacency_matrix.get(y))
-                    if (adjacency_matrix.get(x).contains(z))
-                        for (int w : adjacency_matrix.get(z))
-                            if (adjacency_matrix.get(y).contains(w) && adjacency_matrix.get(x).contains(w))
-                                for (int u : adjacency_matrix.get(w))
-                                    if (adjacency_matrix.get(x).contains(u) && adjacency_matrix.get(y).contains(u) && adjacency_matrix.get(z).contains(u)) {
+        for (int x = 0; x < vertexesCount; x++)
+            for (int y : adjacencyMatrix.get(x))
+                for (int z : adjacencyMatrix.get(y))
+                    if (adjacencyMatrix.get(x).contains(z))
+                        for (int w : adjacencyMatrix.get(z))
+                            if (adjacencyMatrix.get(y).contains(w) && adjacencyMatrix.get(x).contains(w))
+                                for (int u : adjacencyMatrix.get(w))
+                                    if (adjacencyMatrix.get(x).contains(u) && adjacencyMatrix.get(y).contains(u) && adjacencyMatrix.get(z).contains(u)) {
                                         Set<Integer> vertexSet = new HashSet<>();
                                         vertexSet.add(x);
                                         vertexSet.add(y);
@@ -131,15 +131,15 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
     }
 
     private boolean checkForK33() {
-        for (int x = 0; x < vertexes_count; x++)
-            for (int y : adjacency_matrix.get(x))
-                for (int z : adjacency_matrix.get(y))
-                    for (int w : adjacency_matrix.get(z))
-                        if (adjacency_matrix.get(x).contains(w))
-                            for (int u : adjacency_matrix.get(w))
-                                if (adjacency_matrix.get(y).contains(u))
-                                    for (int v : adjacency_matrix.get(u))
-                                        if (adjacency_matrix.get(x).contains(v) && adjacency_matrix.get(z).contains(v)) {
+        for (int x = 0; x < vertexesCount; x++)
+            for (int y : adjacencyMatrix.get(x))
+                for (int z : adjacencyMatrix.get(y))
+                    for (int w : adjacencyMatrix.get(z))
+                        if (adjacencyMatrix.get(x).contains(w))
+                            for (int u : adjacencyMatrix.get(w))
+                                if (adjacencyMatrix.get(y).contains(u))
+                                    for (int v : adjacencyMatrix.get(u))
+                                        if (adjacencyMatrix.get(x).contains(v) && adjacencyMatrix.get(z).contains(v)) {
                                             Set<Integer> vertexSet = new HashSet<>();
                                             vertexSet.add(x);
                                             vertexSet.add(y);
@@ -154,3 +154,4 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
         return false;
     }
 }
+
