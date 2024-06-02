@@ -3,8 +3,7 @@ import com.mathsystem.api.graph.model.Graph;
 import com.mathsystem.domain.graph.repository.Color;
 import com.mathsystem.domain.graph.repository.GraphType;
 
-import java.util.Arrays;
-import java.util.UUID;
+import java.util.*;
 
 public class AdjacencyMatrix {
 
