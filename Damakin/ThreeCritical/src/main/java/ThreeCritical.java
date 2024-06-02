@@ -11,43 +11,43 @@ import java.util.*;
 public class ThreeCritical implements GraphProperty{
     @Override
     public boolean execute(Graph graph) {
-        List<Edge> edges = graph.getEdges();
-
-        for (Edge edge : edges) {
-            Graph graphtmp = removeEdge(graph, edge);
-            if(isThreeCritical(graphtmp)) {
+        if(isThreeCritical(graph)) {
                 return true;
             }
-        }
+
         return false;
     }
     private boolean isThreeCritical(Graph graph){
-
         List<Vertex> vertices = new ArrayList<>(graph.getVertices().values());
-        for (Vertex vertex1 : vertices) {
-            for (Vertex vertex2 : vertices) {
-                if (vertex1.equals(vertex2)) {
-                    continue;
-                } else {
-                    if (isThreeChromatic(graph)) {
-                        // Создаем копию графа перед удалением вершин и связанных с ними рёбер
-                        Graph newGraph = removeVertexAndEdges(graph, vertex1);
-                        newGraph = removeVertexAndEdges(newGraph, vertex2);
-                        boolean check_less_chromatic = isLessThreeChromatic(newGraph);
-                        if (check_less_chromatic){
-                            return true;
-                        } else {
-                            return false;
-                        }
-
-                    } else {
-                        return false;
-                    }
+        List<Edge> edges = graph.getEdges();
+        for (Vertex vertex : vertices) {
+            if (isThreeChromatic(graph)) {
+                Graph newGraph = removeVertexAndEdges(graph, vertex);
+                boolean check_less_chromatic = isLessThreeChromatic(newGraph);
+                if (check_less_chromatic) {
+                    return true;
                 }
+
+
+            } else {
+                return false;
+            }
+        }
+        for (Edge edge : edges) {
+            if (isThreeChromatic(graph)) {
+                Graph newGraph = removeEdge(graph, edge);
+                boolean check_less_chromatic = isLessThreeChromatic(newGraph);
+                if (check_less_chromatic) {
+                    return true;
+                }
+
+
+            } else {
+                return false;
             }
         }
 
-        return true;
+        return false;
     }
 
     public Graph removeEdge(Graph graph, Edge edgeToRemove) {
