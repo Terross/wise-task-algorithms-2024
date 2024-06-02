@@ -16,7 +16,7 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
             throw new IllegalArgumentException("Граф должен быть планарным");
         }
 
-        if (graph.getVertices() == null  graph.getEdges() == null) {
+        if (graph.getVertices() == null || graph.getEdges() == null) {
             throw new IllegalArgumentException("Граф не содержит вершин или ребер");
         }
 
@@ -80,7 +80,7 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
 
         boolean k5 = checkForK5();
         boolean k33 = checkForK33();
-        return !(k5  k33);
+        return !(k5 || k33);
     }
 
     private void setValues(Graph graph) {
@@ -107,7 +107,7 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
         adjacency_matrix.get(v).add(w);
         adjacency_matrix.get(w).add(v);
     }
-    
+
     private boolean checkForK5() {
         for (int x = 0; x < vertexes_count; x++)
             for (int y : adjacency_matrix.get(x))
