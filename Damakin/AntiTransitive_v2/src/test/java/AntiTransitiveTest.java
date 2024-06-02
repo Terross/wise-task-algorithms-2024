@@ -11,12 +11,12 @@ public class AntiTransitiveTest {
 
     @Test
     public void activateSimpleTest() throws FileNotFoundException {
-        AntiTransitive antitransitive = new AntiTransitive();
-        for (int i = 1; i <= 4; i++) {
+        AntiTransitive_v2 antitransitive = new AntiTransitive_v2();
+        for (int i = 1; i <= 5; i++) {
             var graph = GraphFactory.loadGraphFromFile(new File(String.format("src/test/resources/graph%d.txt", i)));
             assertThat(antitransitive.execute(graph)).isTrue();
         }
-        for (int i = 5; i <= 8; i++) {
+        for (int i = 6; i <= 6; i++) {
             var graph = GraphFactory.loadGraphFromFile(new File(String.format("src/test/resources/graph%d.txt", i)));
             assertThat(antitransitive.execute(graph)).isFalse();
         }
