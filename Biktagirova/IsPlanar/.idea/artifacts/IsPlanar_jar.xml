@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="IsPlanar:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IsPlanar_jar</output-path>
+    <root id="root">
+      <element id="archive" name="IsPlanar.jar">
+        <element id="module-output" name="IsPlanar" />
+      </element>
+    </root>
+  </artifact>
+</component>
