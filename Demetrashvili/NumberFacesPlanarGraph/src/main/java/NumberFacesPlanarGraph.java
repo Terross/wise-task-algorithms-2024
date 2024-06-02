@@ -16,22 +16,19 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
             throw new IllegalArgumentException("Граф должен быть планарным");
         }
 
-        if (graph.getVertices() == null || graph.getEdges() == null) {
+        if (graph.getVertices() == null  graph.getEdges() == null) {
             throw new IllegalArgumentException("Граф не содержит вершин или ребер");
         }
 
         int edgeCount = graph.getEdgeCount();
         int vertexCount = graph.getVertexCount();
 
-        if (edgeCount < 3 || vertexCount < 3) {
-            throw new IllegalArgumentException("Граф должен содержать как минимум 3 вершины и 3 ребра");
-        }
-
         if (!isConnectedGraph(graph)) {
             throw new IllegalArgumentException("Граф не является связным");
         }
 
-        // Подсчет числа граней по формуле Эйлера(Формула Эйлера: F = E - V + 2, где F - число граней, E - число ребер, V - число вершин.)
+        // Подсчет числа граней по формуле Эйлера(Формула Эйлера: F = E - V + 2, где F - число граней,
+        // E - число ребер, V - число вершин.)
         return edgeCount - vertexCount + 2;
     }
 
@@ -65,7 +62,14 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
         }
     }
 
-    // Проверка на планарность графа
+    /**
+     * Проверяет, является ли граф планарным.
+     *
+     * Использьзуется теорема Понтрягина — Куратовского.  граф планарен тогда и только тогда, когда он не содержит
+     * полного графа с пятью вершинами (K5) и полного двудольного графа с тремя вершинами в каждой доле (K3,3).
+     *
+     * @return true, если граф планарный, иначе false
+     */
     private boolean isPlanar(Graph graph) {
 
         setValues(graph);
@@ -76,7 +80,7 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
 
         boolean k5 = checkForK5();
         boolean k33 = checkForK33();
-        return !(k5 || k33);
+        return !(k5  k33);
     }
 
     private void setValues(Graph graph) {
@@ -103,7 +107,7 @@ public class NumberFacesPlanarGraph implements GraphCharacteristic {
         adjacency_matrix.get(v).add(w);
         adjacency_matrix.get(w).add(v);
     }
-
+    
     private boolean checkForK5() {
         for (int x = 0; x < vertexes_count; x++)
             for (int y : adjacency_matrix.get(x))
