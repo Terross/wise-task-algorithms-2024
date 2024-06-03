@@ -64,4 +64,11 @@ public class ChromaticNumberEqualSixTest {
         var graph = GraphFactory.loadGraphFromFile(new File("C:\\Users\\Наталья\\IdeaProjects\\wise-task-algorithms-2024-main\\ChromaticNumberEqualSix\\src\\test\\resourses\\random_positive_test.txt"));
         assertThat(ChromaticNumber.execute(graph)).isTrue();
     }
+
+    @Test
+    public void randomNegativeTest() throws FileNotFoundException {
+        ChromaticNumberEqualSix ChromaticNumber = new ChromaticNumberEqualSix();
+        var graph = GraphFactory.loadGraphFromFile(new File("C:\\Users\\Наталья\\IdeaProjects\\wise-task-algorithms-2024-main\\ChromaticNumberEqualSix\\src\\test\\resourses\\check_test.txt"));
+        assertThat(ChromaticNumber.execute(graph)).isFalse();
+    }
 }
