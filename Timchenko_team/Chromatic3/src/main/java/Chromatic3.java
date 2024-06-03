@@ -1,68 +1,84 @@
 import com.mathsystem.api.graph.model.Edge;
 import com.mathsystem.api.graph.model.Graph;
+import com.mathsystem.domain.graph.repository.Color;
 import com.mathsystem.domain.plugin.plugintype.GraphProperty;
 
 import java.util.*;
 
 public class Chromatic3 implements GraphProperty {
-    public Map<UUID, List<UUID>> vertexListfunc(Graph graph){
-        Map<UUID, List<UUID>> vertexMap = new TreeMap<>();
-        for(var vertex : graph.getVertices().keySet()){
-            vertexMap.put(vertex, new ArrayList<>());
-        }
-        for(Edge edge: graph.getEdges()){
-            UUID from = edge.getFromV();
-            UUID to = edge.getToV();
-            vertexMap.get(from).add(to);
-            vertexMap.get(to).add(from);
-        }
 
-        return vertexMap;
+    // Создаёт список смежности для графа
+    private Map<UUID, List<UUID>> createAdjacencyList(Graph graph) {
+        Map<UUID, List<UUID>> adjacencyList = new HashMap<>();
+        for (UUID vertex : graph.getVertices().keySet()) {
+            adjacencyList.put(vertex, new ArrayList<>());
+        }
+        for (Edge edge : graph.getEdges()) {
+            UUID fromVertex = edge.getFromV();
+            UUID toVertex = edge.getToV();
+            adjacencyList.get(fromVertex).add(toVertex);
+            adjacencyList.get(toVertex).add(fromVertex);
+        }
+        return adjacencyList;
     }
 
-    public void weightZero(Graph graph){
-        for(var vertex : graph.getVertices().keySet()){
-            graph.getVertices().get(vertex).setWeight(0);
+    // Устанавливает всем вершинам графа указанный цвет
+    private void setAllVerticesColor(Graph graph, Color color) {
+        for (UUID vertex : graph.getVertices().keySet()) {
+            graph.getVertices().get(vertex).setColor(color);
         }
+    }
+
+    // Вычисляет степени всех вершин
+    private Map<UUID, Integer> calculateDegrees(Map<UUID, List<UUID>> adjacencyList) {
+        Map<UUID, Integer> degrees = new HashMap<>();
+        for (UUID vertex : adjacencyList.keySet()) {
+            degrees.put(vertex, adjacencyList.get(vertex).size());
+        }
+        return degrees;
     }
 
     @Override
     public boolean execute(Graph graph) {
-        weightZero(graph);
-        Stack<UUID> stack = new Stack<>();
-        ArrayList<UUID> array = new ArrayList<>();
-        Set<Integer> weightArray = new HashSet<>();
-        Integer max_weight = 1;
+        // Устанавливаем всем вершинам цвет, который при раскраске использовать не будем
+        setAllVerticesColor(graph, Color.yellow);
 
-        Integer i = 0;
-        stack.push(vertexListfunc(graph).keySet().iterator().next());
+        // Создание списка смежности и вычисление степеней для каждой вершины
+        Map<UUID, List<UUID>> adjacencyList = createAdjacencyList(graph);
+        Map<UUID, Integer> degrees = calculateDegrees(adjacencyList);
 
-        while(!(stack.isEmpty())){
-            UUID vertUUID = stack.pop();
-            array.add(vertUUID);
-            graph.getVertices().get(vertUUID).setWeight(1);
-            graph.getVertices().get(vertUUID).setLabel(i.toString());
-            weightArray.clear();
-            weightArray.add(0);
-            for(UUID vertex: vertexListfunc(graph).get(vertUUID)){
-                Integer weight = graph.getVertices().get(vertex).getWeight();
-                weightArray.add(weight);
+        // Получаем отсортированный список вершин по невозрастанию степеней
+        List<UUID> sortedVertices = new ArrayList<>(degrees.keySet());
+        sortedVertices.sort((v1, v2) -> degrees.get(v2) - degrees.get(v1));
+
+        // Используем массив из 5 цветов для раскраски
+        Color[] colors = {Color.red, Color.green, Color.blue};
+        Set<Color> usedColors = new HashSet<>();
+
+        // Раскраска вершин
+        for (UUID vertex : sortedVertices) {
+            Set<Color> neighborColors = new HashSet<>();
+            for (UUID neighbor : adjacencyList.get(vertex)) {
+                neighborColors.add(graph.getVertices().get(neighbor).getColor());
             }
-
-            for(int x = 0; x <= weightArray.size(); x++){
-                if((!weightArray.contains(x))){
-                    graph.getVertices().get(vertUUID).setWeight(x);
-                    if(x > max_weight){max_weight = x;}
+            Color available_color = Color.yellow;
+            // Находим первый доступный цвет для текущей вершины
+            for (Color color : colors) {
+                if (!neighborColors.contains(color)) {
+                    available_color = color;
                     break;
                 }
             }
 
-            for(UUID vertex: vertexListfunc(graph).get(array.get(array.size()-1))){
-                if(!(array.contains(vertex)) & !(stack.contains(vertex))){
-                    stack.push(vertex);
-                }
+            // Если вершина осталась с начальным цветом, значит не удалось раскрасить граф
+            if (available_color == Color.yellow) {
+                return false;
             }
+            graph.getVertices().get(vertex).setColor(available_color);
+            usedColors.add(graph.getVertices().get(vertex).getColor());
         }
-        return (max_weight == 3);
+
+        // Проверяем, использованы ли все цвета
+        return usedColors.size() == 3;
     }
 }
