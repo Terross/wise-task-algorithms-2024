@@ -14,9 +14,11 @@ public class CoveringVertexSetTest {
         CoveringVertexSet coveringVertexSet = new CoveringVertexSet();
         var oneGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/type_one1187.txt"));
         var twoGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/type_two1187.txt"));
+        var threeGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/type_three1187.txt"));
 
 
         assertThat(coveringVertexSet.execute(oneGraph)==1).isTrue();
         assertThat(coveringVertexSet.execute(twoGraph)!=2).isFalse();
+        assertThat(coveringVertexSet.execute(twoGraph)!=3).isFalse();
     }
 }
