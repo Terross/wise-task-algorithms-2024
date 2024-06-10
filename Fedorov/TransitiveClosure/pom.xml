@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ru.leti</groupId>
-    <artifactId>NodesEqEdges</artifactId>
+    <artifactId>TransiriveClosure</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -26,7 +26,7 @@
             <version>1.0-SNAPSHOT</version>
             <scope>system</scope>
             <type>jar</type>
-            <systemPath>/home/mikhail/Kolok/TransitiveClosure/math-system-1_0-SNAPSHOT.jar</systemPath>
+            <systemPath>/home/mikhail/github/mishIgr_wise-task-algorithms-2024/Fedorov/TransitiveClosure/math-system-1_0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

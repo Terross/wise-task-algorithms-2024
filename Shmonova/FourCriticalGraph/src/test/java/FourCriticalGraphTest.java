@@ -43,9 +43,9 @@ public class FourCriticalGraphTest {
     }
 
     @Test
-    public void checkTest() throws FileNotFoundException {
+    public void randomPositiveTest() throws FileNotFoundException {
         FourCriticalGraph isFourCriticalGraph = new FourCriticalGraph();
-        var graph = GraphFactory.loadGraphFromFile(new File("C:\\Users\\Наталья\\IdeaProjects\\wise-task-algorithms-2024-main\\FourCriticalGraph\\src\\test\\resources\\graph1.txt"));
-        assertThat(isFourCriticalGraph.execute(graph)).isFalse();
+        var graph = GraphFactory.loadGraphFromFile(new File("C:\\Users\\Наталья\\IdeaProjects\\wise-task-algorithms-2024-main\\FourCriticalGraph\\src\\test\\resources\\positive_test.txt"));
+        assertThat(isFourCriticalGraph.execute(graph)).isTrue();
     }
 }

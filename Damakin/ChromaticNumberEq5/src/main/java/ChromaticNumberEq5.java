@@ -21,11 +21,16 @@ public class ChromaticNumberEq5 implements GraphProperty {
         }
         int chromaticNum = 0;
         UUID current_v;
+        // Берем текущую вершину, обновляем хроматическое число, создаем список для удаления вершин
         while (!sorted_vertices.isEmpty()) {
             chromaticNum += 1;
+            if (chromaticNum > 5){
+                return false;
+            }
             current_v = sorted_vertices.remove(0);
             colors.put(current_v, chromaticNum);
             List<UUID> to_delete = new ArrayList<>();
+            // Ищем не смежные вершины
             for (UUID v : sorted_vertices){
                 boolean is_adjacent = false;
                 for (Edge edge : edges) {
@@ -45,6 +50,7 @@ public class ChromaticNumberEq5 implements GraphProperty {
                         }
                     }
                 }
+                // Если не смежная и можно покрасить
                 if (!is_adjacent && colors.get(v) == -1) {
                     boolean can_fill = true;
                     for (Edge edge : edges) {
@@ -64,6 +70,7 @@ public class ChromaticNumberEq5 implements GraphProperty {
                             }
                         }
                     }
+                    // Если можно покрасить, красим и добавляем вв список для удаления
                     if (can_fill) {
                         colors.put(v, chromaticNum);
                         to_delete.add(v);
@@ -112,6 +119,7 @@ public class ChromaticNumberEq5 implements GraphProperty {
         return sorted;
     }
 
+    // Нахождение степени вершины
     public int degree(UUID id, List<Edge> edges){
         int degree = 0;
         for (Edge edge : edges){
@@ -122,6 +130,7 @@ public class ChromaticNumberEq5 implements GraphProperty {
         return degree;
     }
 
+    // Обновление массива сортированных вершин
     public List<UUID> update(List<UUID> vertices, List<Edge> edges){
         List<Edge> copy_edges = new ArrayList<>();
         for (Edge edge : edges) {
