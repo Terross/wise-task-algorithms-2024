@@ -10,41 +10,41 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class EdgeConnectivityTest {
 
     @Test
-    public void activateSimpleTest() throws FileNotFoundException {
+    public void K3_3() throws FileNotFoundException {
         var isPlanarWithoutSomeEdge = new EdgeConnectivity();
-        var trueGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/trueGraph.txt"));
+        var K3_3 = GraphFactory.loadGraphFromFile(new File("src/test/resources/trueGraph.txt"));
         var falseGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/falseGraph.txt"));
 
-        assertThat(isPlanarWithoutSomeEdge.execute(trueGraph)).isTrue();
+        assertThat(isPlanarWithoutSomeEdge.execute(K3_3)).isTrue();
         assertThat(isPlanarWithoutSomeEdge.execute(falseGraph)).isFalse();
     }
 
     @Test
-    public void oneDoteSimpleTest() throws FileNotFoundException {
+    public void K5() throws FileNotFoundException {
         var isPlanarWithoutSomeEdge = new EdgeConnectivity();
-        var oneDotGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/1.txt"));
-        assertThat(isPlanarWithoutSomeEdge.execute(oneDotGraph)).isFalse();
+        var K5 = GraphFactory.loadGraphFromFile(new File("src/test/resources/1.txt"));
+        assertThat(isPlanarWithoutSomeEdge.execute(K5)).isTrue();
     }
 
     @Test
-    public void aLotDoteSimpleTest() throws FileNotFoundException {
+    public void graph_without_intersection() throws FileNotFoundException {
         var isPlanarWithoutSomeEdge = new EdgeConnectivity();
-        var aLotDoteSimpleGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/2.txt"));
-        assertThat(isPlanarWithoutSomeEdge.execute(aLotDoteSimpleGraph)).isFalse();
+        var graph_without_intersection = GraphFactory.loadGraphFromFile(new File("src/test/resources/2.txt"));
+        assertThat(isPlanarWithoutSomeEdge.execute(graph_without_intersection)).isFalse();
     }
     @Test
-    public void twoDotOneLineTest() throws FileNotFoundException {
+    public void graph_with_1_intersection() throws FileNotFoundException {
         var isPlanarWithoutSomeEdge = new EdgeConnectivity();
-        var twoDotGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/3.txt"));
+        var graph_with_1_intersection = GraphFactory.loadGraphFromFile(new File("src/test/resources/3.txt"));
 
-        assertThat(isPlanarWithoutSomeEdge.execute(twoDotGraph)).isFalse();
+        assertThat(isPlanarWithoutSomeEdge.execute(graph_with_1_intersection)).isFalse();
     }
     @Test
-    public void aLotDotsAndLinesTest() throws FileNotFoundException {
+    public void graph_with_many_intersections() throws FileNotFoundException {
         var isPlanarWithoutSomeEdge = new EdgeConnectivity();
-        var defaultTrueGraph = GraphFactory.loadGraphFromFile(new File("src/test/resources/4.txt"));
+        var graph_with_many_intersections = GraphFactory.loadGraphFromFile(new File("src/test/resources/4.txt"));
 
-        assertThat(isPlanarWithoutSomeEdge.execute(defaultTrueGraph)).isFalse();
+        assertThat(isPlanarWithoutSomeEdge.execute(graph_with_many_intersections)).isFalse();
     }
 
 
