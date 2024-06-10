@@ -25,16 +25,8 @@ public class IsPancyclicTest {
     }
 
     @Test
-    public void TriangleTest() throws FileNotFoundException {
-        var graph = GraphFactory.loadGraphFromFile(new File("src/test/resources/TriangleTest.txt"));
-        IsPancyclic isPancyclic = new IsPancyclic();
-
-        assertThat(isPancyclic.execute(graph)).isTrue();
-    }
-
-    @Test
-    public void ComplexNonPancyclicTest() throws FileNotFoundException {
-        var graph = GraphFactory.loadGraphFromFile(new File("src/test/resources/ComplexNonPancyclicTest.txt"));
+    public void DefTest() throws FileNotFoundException {
+        var graph = GraphFactory.loadGraphFromFile(new File("src/test/resources/DefTest.txt"));
         IsPancyclic isPancyclic = new IsPancyclic();
 
         assertThat(isPancyclic.execute(graph)).isFalse();
@@ -54,5 +46,21 @@ public class IsPancyclicTest {
         IsPancyclic isPancyclic = new IsPancyclic();
 
         assertThat(isPancyclic.execute(graph)).isFalse();
+    }
+
+    @Test
+    public void SimpleTest() throws FileNotFoundException {
+        var graph = GraphFactory.loadGraphFromFile(new File("src/test/resources/SimpleTest.txt"));
+        IsPancyclic isPancyclic = new IsPancyclic();
+
+        assertThat(isPancyclic.execute(graph)).isTrue();
+    }
+
+    @Test
+    public void K7Test() throws FileNotFoundException {
+        var graph = GraphFactory.loadGraphFromFile(new File("src/test/resources/K7Test.txt"));
+        IsPancyclic isPancyclic = new IsPancyclic();
+
+        assertThat(isPancyclic.execute(graph)).isTrue();
     }
 }

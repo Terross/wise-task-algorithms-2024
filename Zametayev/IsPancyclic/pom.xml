@@ -18,12 +18,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <resources>
-        <resource>
-            <directory>src/resources</directory>
-        </resource>
-    </resources>
-
     <dependencies>
         <dependency>
             <groupId>com.example</groupId>
