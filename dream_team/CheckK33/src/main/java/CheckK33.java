@@ -21,10 +21,11 @@ public class CheckK33 implements GraphProperty {
         var restedEdges = graph.getEdges().stream().filter((e) -> !cf.test(e))
                 .collect(Collectors.toCollection(LinkedList::new));
 
-        // Группы стянутых вершин
+        // Создание групп стянутых вершин
         var checked = new HashSet<UUID>();
         var groups = new HashSet<HashSet<UUID>>();
         for (var e : removedEdges) {
+            // Для каждой вершины добавляем в группу
             HashSet<UUID> group = null;
             for (var g : groups) {
                 if (g.contains(e.getFromV()) || g.contains(e.getToV())) {
@@ -32,10 +33,14 @@ public class CheckK33 implements GraphProperty {
                     break;
                 }
             }
+
+            // Если она не относится ни к одной группе создаем новую
             if (group == null) {
                 group = new HashSet<>();
                 groups.add(group);
             }
+
+            // Добавление в группу и пометка как определенной в группу
             group.add(e.getFromV());
             checked.add(e.getFromV());
 
@@ -64,17 +69,27 @@ public class CheckK33 implements GraphProperty {
                 e.setToV(newVertices.get(e.getToV()).getId());
         }
 
+        // Удаление дублированных вершин
+        newEdges.removeIf(e -> {
+            for (var edge : newEdges) {
+                if (e != edge && e.getFromV().equals(edge.getFromV()) && e.getToV().equals(edge.getToV()))
+                    return true;
+            }
+            return false;
+        });
+
         // Проверка на изоморфность K33
         if (groups.size() != 6) return false;
         if (newEdges.size() != 9) return false;
 
+        // Определение вершин в левую или правую группу
         HashSet<UUID> left = new HashSet<>(Collections.singleton(newEdges.getFirst().getFromV()));
         HashSet<UUID> right = new HashSet<>();
-        for (var e: newEdges) {
+        for (var e : newEdges) {
             if (left.contains(e.getFromV())) right.add(e.getToV());
             else if (left.contains(e.getToV())) right.add(e.getFromV());
         }
-        for (var e: newEdges) {
+        for (var e : newEdges) {
             if (left.contains(e.getFromV())) right.add(e.getToV());
             else if (left.contains(e.getToV())) right.add(e.getFromV());
             else if (right.contains(e.getFromV())) left.add(e.getToV());
