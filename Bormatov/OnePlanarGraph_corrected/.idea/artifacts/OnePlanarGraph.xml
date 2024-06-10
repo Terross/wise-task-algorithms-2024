@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="OnePlanarGraph">
+    <output-path>$PROJECT_DIR$/out/artifacts/OnePlanarGraph</output-path>
+    <root id="archive" name="OnePlanarGraph.jar">
+      <element id="module-output" name="OnePlanarGraph" />
+    </root>
+  </artifact>
+</component>

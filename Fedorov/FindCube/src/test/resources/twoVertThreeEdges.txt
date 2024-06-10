@@ -1,0 +1,7 @@
+UNDIRECTED 2
+ 3
+890de2f6-ff29-4b23-b0bf-8165c051e4e7 gray null null 230 509
+90f2800f-4b14-4e95-89fe-609ff7ccb912 gray null null 230 509
+90f2800f-4b14-4e95-89fe-609ff7ccb912 890de2f6-ff29-4b23-b0bf-8165c051e4e7 gray null null 
+90f2800f-4b14-4e95-89fe-609ff7ccb912 890de2f6-ff29-4b23-b0bf-8165c051e4e7 gray null null 
+90f2800f-4b14-4e95-89fe-609ff7ccb912 890de2f6-ff29-4b23-b0bf-8165c051e4e7 gray null null 

@@ -1,0 +1,30 @@
+UNDIRECTED 11
+ 17
+f920b1dc-9cb7-48ce-a4cc-db001828f719 gray null null 146 185
+7f3192c6-849a-4853-a56a-a90f78597cc7 gray null null 225 135
+ab16187b-28e9-49ec-a4d2-1b65520d8317 gray null null 253 172
+7ae061ba-9476-4c89-8943-0b4ed11bb5e3 gray null null 150 231
+c61ec323-8787-426f-970f-3c1098d65e16 gray null null 220 239
+a68b769e-2483-489b-ba5c-4ebfa3a27cd5 gray null null 254 311
+04051618-4141-4c9d-a1c6-ae4ba6d04632 gray null null 123 326
+3332f3ec-a1bc-46bb-844f-484281fa0229 gray null null 333 194
+4e088ae1-1ed2-4613-b6dd-cddf802fb2f2 gray null null 78 224
+69b8d0cd-ad89-4c8d-a7e7-34afbe559eb7 gray null null 318 102
+91f5d9fc-8a31-42c8-8fa3-d7fd0c7bded6 gray null null 118 120
+f920b1dc-9cb7-48ce-a4cc-db001828f719 7f3192c6-849a-4853-a56a-a90f78597cc7 gray null null 
+f920b1dc-9cb7-48ce-a4cc-db001828f719 7ae061ba-9476-4c89-8943-0b4ed11bb5e3 gray null null 
+7ae061ba-9476-4c89-8943-0b4ed11bb5e3 c61ec323-8787-426f-970f-3c1098d65e16 gray null null 
+f920b1dc-9cb7-48ce-a4cc-db001828f719 ab16187b-28e9-49ec-a4d2-1b65520d8317 gray null null 
+ab16187b-28e9-49ec-a4d2-1b65520d8317 c61ec323-8787-426f-970f-3c1098d65e16 gray null null 
+7ae061ba-9476-4c89-8943-0b4ed11bb5e3 04051618-4141-4c9d-a1c6-ae4ba6d04632 gray null null 
+c61ec323-8787-426f-970f-3c1098d65e16 a68b769e-2483-489b-ba5c-4ebfa3a27cd5 gray null null 
+ab16187b-28e9-49ec-a4d2-1b65520d8317 3332f3ec-a1bc-46bb-844f-484281fa0229 gray null null 
+f920b1dc-9cb7-48ce-a4cc-db001828f719 4e088ae1-1ed2-4613-b6dd-cddf802fb2f2 blue null null 
+7f3192c6-849a-4853-a56a-a90f78597cc7 91f5d9fc-8a31-42c8-8fa3-d7fd0c7bded6 gray null null 
+91f5d9fc-8a31-42c8-8fa3-d7fd0c7bded6 f920b1dc-9cb7-48ce-a4cc-db001828f719 gray null null 
+91f5d9fc-8a31-42c8-8fa3-d7fd0c7bded6 4e088ae1-1ed2-4613-b6dd-cddf802fb2f2 gray null null 
+7f3192c6-849a-4853-a56a-a90f78597cc7 ab16187b-28e9-49ec-a4d2-1b65520d8317 gray null null 
+7f3192c6-849a-4853-a56a-a90f78597cc7 69b8d0cd-ad89-4c8d-a7e7-34afbe559eb7 gray null null 
+69b8d0cd-ad89-4c8d-a7e7-34afbe559eb7 ab16187b-28e9-49ec-a4d2-1b65520d8317 gray null null 
+69b8d0cd-ad89-4c8d-a7e7-34afbe559eb7 3332f3ec-a1bc-46bb-844f-484281fa0229 gray null null 
+04051618-4141-4c9d-a1c6-ae4ba6d04632 a68b769e-2483-489b-ba5c-4ebfa3a27cd5 gray null null 

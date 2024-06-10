@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="OneValent">
+    <output-path>$PROJECT_DIR$/out/artifacts/OneValent</output-path>
+    <root id="archive" name="OneValent.jar">
+      <element id="module-output" name="OneValent" />
+    </root>
+  </artifact>
+</component>
