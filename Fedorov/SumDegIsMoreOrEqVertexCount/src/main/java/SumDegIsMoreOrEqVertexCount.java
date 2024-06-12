@@ -26,7 +26,7 @@ public class SumDegIsMoreOrEqVertexCount implements GraphProperty {
             }
         }
 
-        return min_degree1 + min_degree2 > graph.getVertexCount();
+        return min_degree1 + min_degree2 >= graph.getVertexCount();
     }
 
     private HashMap <UUID, Integer> degrees = new HashMap<UUID, Integer>();
